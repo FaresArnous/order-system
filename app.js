@@ -21,4 +21,4 @@ app.use(express.static("public"));
 
 app.use(menuRoutes);
 
-server.listen(3030);
+server.listen(3030, process.env.IP);
