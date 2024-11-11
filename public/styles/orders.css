@@ -1,0 +1,33 @@
+#order-summary {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin: 3rem auto;
+  background-color: rgb(204, 202, 202);
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+}
+#order-summary h2 {
+  padding: 0 0 1rem 0;
+}
+
+#order-summary .order-item {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 1rem;
+}
+
+#order-summary .item-name {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+#order-summary .item-quantity {
+  color: rgb(255, 69, 0);
+}
+
+#line {
+  border: 1px solid rgb(57, 57, 57);
+}
