@@ -99,6 +99,11 @@ main ul {
   animation: forwards 4s ease-out;
 }
 
+.select {
+  display: flex;
+  justify-content: right;
+}
+
 @media (max-width: 48rem) {
   header {
     width: 100%;

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/menu.css" />
     <script src="/socket.io/socket.io.js"></script>
     <script src="/scripts/quantity.js" defer></script>
+    <script src="/scripts/items.js" defer></script>
 
     <title>Menu</title>
   </head>
@@ -19,86 +20,10 @@
     <main>
       <section id="bg">
         <div id="contaier">
-          <ul>
-            <li class="item">
-              <img src="Images/Turkish-Coffee.jpg" alt="Turkish-Coffee" />
-              <div class="quantity-controls">
-                <h2>Turkish coffee</h2>
-                <button class="decrease" data-item="Turkish coffee">-</button>
-                <input
-                  class="ss"
-                  type="text"
-                  id="Turkish-coffee-quantity"
-                  value="0" />
-                <button class="increase" data-item="Turkish coffee">+</button>
-              </div>
-            </li>
-
-            <li class="item">
-              <img src="Images/Americano.jpg" alt="Americano" />
-              <div class="quantity-controls">
-                <h2>Americano</h2>
-                <button class="decrease" data-item="Americano">-</button>
-                <input
-                  class="ss"
-                  type="text"
-                  id="Americano-quantity"
-                  value="0" />
-                <button class="increase" data-item="Americano">+</button>
-              </div>
-            </li>
-
-            <li class="item">
-              <img src="Images/Tea.jpg" alt="Americano" />
-              <div class="quantity-controls">
-                <h2>Tea</h2>
-                <button class="decrease" data-item="Tea">-</button>
-                <input class="ss" type="text" id="Tea-quantity" value="0" />
-                <button class="increase" data-item="Tea">+</button>
-              </div>
-            </li>
-
-            <li class="item">
-              <img src="images/green tea.avif" alt="Americano" />
-              <div class="quantity-controls">
-                <h2>Green Tea</h2>
-                <button class="decrease" data-item="Green-Tea">-</button>
-                <input
-                  class="ss"
-                  type="text"
-                  id="Green-Tea-quantity"
-                  value="0" />
-                <button class="increase" data-item="Green-Tea">+</button>
-              </div>
-            </li>
-
-            <li class="item">
-              <img src="Images/water.jpg" alt="Water" />
-              <div class="quantity-controls">
-                <h2>Water</h2>
-                <button class="decrease" data-item="Water">-</button>
-                <input class="ss" type="text" id="Water-quantity" value="0" />
-                <button class="increase" data-item="Water">+</button>
-              </div>
-            </li>
-
-            <li class="item">
-              <img src="/images/nescafe.jpeg" alt="Water" />
-              <div class="quantity-controls">
-                <h2>Nescafe classic</h2>
-                <button class="decrease" data-item="Nescafe classic">-</button>
-                <input
-                  class="ss"
-                  type="text"
-                  id="Nescafe-classic-quantity"
-                  value="0" />
-                <button class="increase" data-item="Nescafe classic">+</button>
-              </div>
-            </li>
-          </ul>
+          <ul id="menu-list"></ul>
         </div>
         <section id="sub-btn">
-          <button>submit</button>
+          <button>Submit</button>
         </section>
       </section>
     </main>
