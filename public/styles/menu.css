@@ -101,7 +101,7 @@ main ul {
 
 .select {
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 @media (max-width: 48rem) {
