@@ -44,11 +44,10 @@ socket.on("order-update", (order) => {
     if (isConfirmed) {
       orderSummary.removeChild(newOrderContainer);
 
-      // Remove the order from localStorage
       let existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
       existingOrders = existingOrders.filter(
         (o) => JSON.stringify(o) !== JSON.stringify(order)
-      ); // Remove the order
+      );
       localStorage.setItem("orders", JSON.stringify(existingOrders)); // Update localStorage
     }
   });
@@ -60,21 +59,17 @@ socket.on("order-update", (order) => {
   separatorLine.id = "line";
   newOrderContainer.appendChild(separatorLine);
 
-  // Append the new order to the order summary
   orderSummary.appendChild(newOrderContainer);
 
-  // Save the order to localStorage
   let existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
   existingOrders.push(order); // Add the new order
   localStorage.setItem("orders", JSON.stringify(existingOrders)); // Update localStorage
 });
 
-// On page load, load saved orders from localStorage
 document.addEventListener("DOMContentLoaded", () => {
   const orderSummary = document.getElementById("order-summary");
   let savedOrders = JSON.parse(localStorage.getItem("orders")) || [];
 
-  // Iterate over the saved orders and display them
   savedOrders.forEach((order) => {
     const newOrderContainer = document.createElement("div");
     newOrderContainer.classList.add("new-order");
@@ -84,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     newOrderContainer.appendChild(orderHeading);
 
-    // Iterate through the order items and display each one
     for (const item in order) {
       const orderItem = document.createElement("div");
       orderItem.classList.add("order-item");
@@ -103,12 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
       newOrderContainer.appendChild(orderItem);
     }
 
-    // Create the clear button for the order
     const clearButton = document.createElement("button");
     clearButton.classList.add("clear-btn");
     clearButton.textContent = "Clear Order";
 
-    // Clear order on click with confirmation
     clearButton.addEventListener("click", () => {
       const isConfirmed = window.confirm(
         "Are you sure you want to clear this order?"
@@ -126,12 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     newOrderContainer.appendChild(clearButton);
 
-    // Add separator line
     const separatorLine = document.createElement("hr");
     separatorLine.id = "line";
     newOrderContainer.appendChild(separatorLine);
 
-    // Append the new order to the order summary
     orderSummary.appendChild(newOrderContainer);
   });
 });

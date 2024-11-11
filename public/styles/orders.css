@@ -10,6 +10,7 @@
   padding: 1rem;
 }
 #order-summary h2 {
+  margin-bottom: 0;
   padding: 0 0 1rem 0;
 }
 
@@ -20,7 +21,8 @@
 }
 
 #order-summary .item-name {
-  font-weight: bold;
+  font-family: serif;
+  font-weight: 500;
   margin-right: 0.5rem;
 }
 
@@ -35,6 +37,9 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.clear-btn:hover {
+  background-color: rgb(57, 48, 109);
 }
 
 #line {
